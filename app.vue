@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <WeatherApp />
   </div>
 </template>
@@ -13,5 +13,8 @@ body {
   background: #0F2231;
   font-family: PT Sans;
   color: #F5F5F5;
+}
+[v-cloak] {
+    display: none;
 }
 </style>

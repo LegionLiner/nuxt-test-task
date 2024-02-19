@@ -14,7 +14,7 @@ const props = defineProps({
 });
 
 const occured = ref(props.text);
-watch(() => props.text, () => {
+watch(() => props.text, () => {    
     occured.value = props.text;
 });
 </script>

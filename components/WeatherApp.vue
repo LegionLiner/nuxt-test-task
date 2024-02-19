@@ -1,7 +1,6 @@
 <template>
     <div class="main">
         <WeatherPanel @error="showError" />
-
         <ErrorModal :text="errorText"/>
     </div>
 </template>
