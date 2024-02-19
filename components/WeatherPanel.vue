@@ -6,7 +6,7 @@
                     <input v-model="cityInput" ref="input">
 
                     <div v-if="isEditable" class="submit">
-                        <button @click="getData">Search</button>
+                        <button @click="getData">Поиск</button>
                     </div>
                 </div>
                 <div class="weather">
