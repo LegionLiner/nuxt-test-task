@@ -43,6 +43,7 @@ async function getData() {
             nextDays.value.push(day);
         }
     }).catch(err => {
+        console.debug(err);
         emits('error', 'Не удалось получить данные погоды на 3 дня вперед.');
     })
 }

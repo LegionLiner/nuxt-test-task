@@ -43,8 +43,8 @@ const emits = defineEmits(['error']);
 
 const apiKey = "7ef64ca8eb156d2b3f3d62b01bf93f2d";
 const input = ref<HTMLInputElement | null>(null);
-const cityInput = ref('Novocherkassk');
-const city = ref('Novocherkassk');
+const cityInput = ref('Moscow');
+const city = ref('Moscow');
 const weatherInfo = ref<CurrentDay | Record<string, never>>({})
 const weatherIcons = {
     'clear': 'day',
@@ -81,6 +81,7 @@ async function getData() {
         weatherInfo.value.description = res.weather[0].description;
         weatherInfo.value.time = res.dt;
     }).catch(err => {
+        console.debug(err);
         emits('error', "Не удалось получить данные погоды за сегодняшний день.");
     })
 }
@@ -97,10 +98,10 @@ function useAsset(path: string): string {
     return assets['/assets/' + path + '.svg']
 }
 
-document?.addEventListener('focusin', (e) => {
+document?.addEventListener('focusin', () => {
     isEditable.value = true;
 })
-document?.addEventListener('focusout', (e) => {
+document?.addEventListener('focusout', () => {
     setTimeout(() => {
         isEditable.value = false;
     }, 200)
